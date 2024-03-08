@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;"/>
-    <link ignore rel="stylesheet" href="./index.css">
+    <link ignore rel="stylesheet" href="./css/index.css">
   </head>
   <style>
     html{
@@ -17,9 +17,9 @@
         <div class="time-circle">
           <div class="sun"></div>
           <div class="moon">
+              <!-- <div></div>
               <div></div>
-              <div></div>
-              <div></div>
+              <div></div> -->
           </div>
           <div class="stars">
               <div></div>
@@ -71,24 +71,33 @@
                   <h4>by Szymon Stypa, inspired by pens on Codepen</h4>
               </div> -->
         
-        <div id="switch">
+        <!-- <div id="switch">
           <div id="circle"></div>
-        </div>
+        </div> -->
       </div>
     </div>
   </body>
-  <script src="./jquery-3.7.1.min.js"></script>
+  <script src="./js/jquery-3.7.1.min.js"></script>
   <script>
     $("#switch").click(function () {
-    if ($("#fullpage").hasClass("night")) {
-      $("#fullpage").removeClass("night");
-      $("#switch").removeClass("switched");
-    }
-    else {
-      $("#fullpage").addClass("night");
-      $("#switch").addClass("switched");
-
-    }
-  });
+      if ($("#fullpage").hasClass("night")) {
+        $("#fullpage").removeClass("night");
+        $("#switch").removeClass("switched");
+      }
+      else {
+        $("#fullpage").addClass("night");
+        $("#switch").addClass("switched");
+      }
+    });
+    setInterval(() => {
+      if ($("#fullpage").hasClass("night")) {
+        $("#fullpage").removeClass("night");
+        $("#switch").removeClass("switched");
+      }
+      else {
+        $("#fullpage").addClass("night");
+        $("#switch").addClass("switched");
+      }
+    }, 10 * 1000)
   </script>
 </html>
